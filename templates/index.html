@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type= "text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>NER DEMO</title>
+</head>
+<body>
+    <div class="form">
+        <h1 id='title'>NER DEMO</h1>
+        <form action="" id = "form-input">
+            <textarea name="" id="paper-text" cols="30" rows="10"></textarea>
+            <!-- <input type="text" name="paper" id="paper-text"> -->
+            <br>
+            <select name="model" id="model">
+                <option value="crf">CRF</option>
+                <option value="bilstm">BiLSTM</option>
+                <option value="bilstm_crf">BiLSTM + CRF</option>
+                <option value="phobert">phoBert</option>
+            </select>
+            <button id='pred'>Predict</button>
+            <br> <br>
+            <textarea name="result" id="result" cols="30" rows="10" style="display: none;"></textarea>
+        </form>
+    </div>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type=text/javascript src="{{url_for('static', filename='process.js')}}" > </script>
+</body>
+</html>
